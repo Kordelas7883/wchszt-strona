@@ -3,100 +3,147 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WCHSZT — Biegi Górskie</title>
+  <title>WCHSZT — przygoda się nie kończy</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
+      background-color: #050505;
+      color: #f4f4f5;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: linear-gradient(160deg, #0f172a 0%, #1e293b 60%, #064e3b 100%);
-      color: #f8fafc;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      line-height: 1.6;
+      align-items: center;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
+
     main {
-      max-width: 720px;
-      margin: auto;
-      padding: 4rem 1.5rem;
-    }
-    .tag {
-      display: inline-block;
-      font-size: 0.8rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #34d399;
-      border: 1px solid rgba(52, 211, 153, 0.4);
-      padding: 0.3rem 0.8rem;
-      border-radius: 999px;
-      margin-bottom: 1.5rem;
-    }
-    h1 {
-      font-size: clamp(2.8rem, 8vw, 4.5rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.05;
-      margin-bottom: 1.2rem;
-    }
-    p.lead {
-      font-size: 1.2rem;
-      color: #cbd5e1;
-      margin-bottom: 2.5rem;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-    .card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
-      padding: 1.25rem;
-    }
-    .card h2 {
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #34d399;
-      margin-bottom: 0.4rem;
-    }
-    .card p {
-      font-size: 0.95rem;
-      color: #e2e8f0;
-    }
-    footer {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
+      padding: 2rem 1.5rem;
+      width: 100%;
+      max-width: 800px;
+      animation: fadeIn 1.4s ease-out forwards;
+    }
+
+    .brand {
+      font-size: 0.75rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #52525b;
+      margin-bottom: 1.4rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 6vw, 3.6rem);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      color: #fafafa;
+      line-height: 1.2;
+      margin-bottom: 3rem;
+    }
+
+    .marquee-wrap {
+      width: 100%;
+      max-width: 620px;
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(to right, transparent, black 18%, black 82%, transparent);
+      mask-image: linear-gradient(to right, transparent, black 18%, black 82%, transparent);
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: drift 32s linear infinite;
+    }
+
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    .marquee-group {
+      display: flex;
+      align-items: center;
+      gap: 2.2rem;
+      padding-right: 2.2rem;
+    }
+
+    .spot {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      color: #71717a;
+      white-space: nowrap;
+      transition: color 0.4s ease;
+    }
+
+    .spot:hover {
+      color: #d4d4d8;
+    }
+
+    .dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background-color: #27272a;
+      flex-shrink: 0;
+    }
+
+    footer {
       padding: 1.5rem;
-      font-size: 0.85rem;
-      color: #64748b;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: #27272a;
+    }
+
+    @keyframes drift {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
   <main>
-    <span class="tag">Ekipa Biegowa</span>
-    <h1>WCHSZT</h1>
-    <p class="lead">
-      Nieformalna zgraja biegająca po górach. Zbieramy przewyższenia, błoto na butach i kolejne starty na listach wyników.
-    </p>
-    <div class="grid">
-      <div class="card">
-        <h2>Teren</h2>
-        <p>Beskidy, Tatry, Gorce i wszystko, gdzie asfalt kończy się wystarczająco szybko.</p>
-      </div>
-      <div class="card">
-        <h2>Zasada</h2>
-        <p>Bez napinki, bez sponsorów — liczy się trasa, ekipa i dobry czas na szlaku.</p>
-      </div>
-      <div class="card">
-        <h2>Kontakt</h2>
-        <p>Spotkasz nas na szlaku albo na liście wyników pod szyldem WCHSZT.</p>
+    <div class="brand">wchszt</div>
+    <h1>przygoda się nie kończy</h1>
+
+    <div class="marquee-wrap" aria-label="Miejscówki">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <span class="spot">cukrowa górka</span>
+          <span class="dot"></span>
+          <span class="spot">kleszczowa łąka</span>
+          <span class="dot"></span>
+          <span class="spot">droga Jarusiowa</span>
+          <span class="dot"></span>
+          <span class="spot">zbieg Gwiezdnych Wojen</span>
+          <span class="dot"></span>
+        </div>
+        <div class="marquee-group" aria-hidden="true">
+          <span class="spot">cukrowa górka</span>
+          <span class="dot"></span>
+          <span class="spot">kleszczowa łąka</span>
+          <span class="dot"></span>
+          <span class="spot">droga Jarusiowa</span>
+          <span class="dot"></span>
+          <span class="spot">zbieg Gwiezdnych Wojen</span>
+          <span class="dot"></span>
+        </div>
       </div>
     </div>
   </main>
-  <footer>© WCHSZT • wchszt.pl</footer>
+
+  <footer>wchszt.pl</footer>
 </body>
 </html>
